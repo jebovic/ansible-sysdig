@@ -1,0 +1,8 @@
+---
+
+# Sysdig install configuration
+sysdig_apt_key_url: "https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public"
+sysdig_apt_repo: "deb http://download.draios.com/stable/deb stable-$(ARCH)/"
+sysdig_packages:
+  - "linux-headers-{{ ansible_kernel }}"
+  - sysdig
