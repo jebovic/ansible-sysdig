@@ -5,5 +5,4 @@
     - role_under_test
   vars:
     sysdig_packages:
-      - "linux-headers-$(uname -r)"
       - sysdig
