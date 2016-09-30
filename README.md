@@ -1,6 +1,8 @@
 Sysdig
 ======
 
+[![Build Status](https://travis-ci.org/jebovic/ansible-sysdig.svg?branch=master)](https://travis-ci.org/jebovic/ansible-sysdig)
+
 Install and configure sysdig
 
 Role Variables
