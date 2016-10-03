@@ -1,7 +1,7 @@
 Sysdig
 ======
 
-[![Build Status](https://travis-ci.org/jebovic/ansible-sysdig.svg?branch=master)](https://travis-ci.org/jebovic/ansible-sysdig)
+[![Build Status](https://travis-ci.org/jebovic/ansible-sysdig.svg?branch=master)](https://travis-ci.org/jebovic/ansible-sysdig) [![Ansible Galaxy](https://img.shields.io/badge/galaxy-jebovic.sysdig-blue.svg?style=flat)](https://galaxy.ansible.com/jebovic/sysdig)
 
 Install and configure sysdig
 
