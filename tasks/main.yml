@@ -21,5 +21,6 @@
     install_recommends: false
     update_cache:       yes
     cache_valid_time:   300
+    allow_unauthenticated: yes
   with_items: "{{ sysdig_packages }}"
   when: sysdig_repo_installed|success
