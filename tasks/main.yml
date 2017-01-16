@@ -4,23 +4,28 @@
   apt_key:
     url: "{{ sysdig_apt_key_url }}"
     state: present
-  register: gpg_key_installed
+  register: sysdig_key_installed
 
 - name: add repo
   apt_repository:
     repo: "{{ sysdig_apt_repo }}"
     state: present
-    update_cache: yes
-  when: gpg_key_installed|success
+    update_cache: no
+  when: sysdig_key_installed|success
   register: sysdig_repo_installed
+
+- name: update apt cache
+  apt:
+    update_cache:       yes
+  when: sysdig_repo_installed|changed
 
 - name: install apt packages
   apt:
     name: "{{ item }}"
-    state:              latest
-    install_recommends: false
-    update_cache:       yes
-    cache_valid_time:   300
+    state: latest
+    install_recommends:    no
     allow_unauthenticated: yes
-  with_items: "{{ sysdig_packages }}"
+    update_cache:       yes
+    cache_valid_time:   86400
   when: sysdig_repo_installed|success
+  with_items: "{{ sysdig_packages }}"
