@@ -16,16 +16,16 @@
 
 - name: update apt cache
   apt:
-    update_cache:       yes
+    update_cache: yes
   when: sysdig_repo_installed|changed
 
 - name: install apt packages
   apt:
     name: "{{ item }}"
     state: latest
-    install_recommends:    no
+    install_recommends: no
     allow_unauthenticated: yes
-    update_cache:       yes
-    cache_valid_time:   86400
+    update_cache: yes
+    cache_valid_time: 86400
   when: sysdig_repo_installed|success
   with_items: "{{ sysdig_packages }}"
